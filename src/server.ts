@@ -2,5 +2,5 @@
 
 // Design pattern: Middleware, Decotar
 
-import donetv from "dotenv";
-donetv.config();
+import dotenv from "dotenv";
+dotenv.config();
