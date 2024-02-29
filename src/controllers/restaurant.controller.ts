@@ -3,7 +3,7 @@ import { T } from "../libs/types/common";
 import MemberService from "../models/Member.service";
 
 const restaurantController: T = {};
-restaurantController.goHome = (req: Request, res: Response) => {
+restaurantController.getHome = (req: Request, res: Response) => {
   try {
     res.send("Home Page");
   } catch (err) {
