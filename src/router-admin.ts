@@ -6,9 +6,9 @@ import restaurantController from "./controllers/restaurant.controller";
 
 routerAdmin.get("/", restaurantController.getHome);
 
-routerAdmin.get("/login", restaurantController.getLogin);
-
-routerAdmin.post("/login", restaurantController.processLogin);
+routerAdmin
+  .get("/login", restaurantController.getLogin)
+  .post("/login", restaurantController.processLogin);
 
 routerAdmin
   .get("/singup", restaurantController.getSignup)
