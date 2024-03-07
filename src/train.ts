@@ -17,3 +17,25 @@
  GraphQL Api
  ......
  */
+
+/*
+  Traditional FD => BSSR (Admin) => EJS
+  Modern FD      => SPA => REACT
+
+  */
+
+function getDigits(str: string | any[]) {
+  if (!str || typeof str !== "string") {
+    return "";
+  }
+
+  let result = "";
+  for (let i = 0; i < str.length; i++) {
+    if (!isNaN(parseInt(str[i]))) {
+      result += str[i];
+    }
+  }
+  return result;
+}
+
+console.log(getDigits("m14i1t"));
