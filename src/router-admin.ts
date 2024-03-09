@@ -5,7 +5,6 @@ import restaurantController from "./controllers/restaurant.controller";
 /* Restaurant */
 
 routerAdmin.get("/", restaurantController.getHome);
-
 routerAdmin
   .get("/login", restaurantController.getLogin)
   .post("/login", restaurantController.processLogin);
