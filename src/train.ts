@@ -24,18 +24,17 @@
 
   */
 
-function getDigits(str: string | any[]) {
-  if (!str || typeof str !== "string") {
-    return "";
-  }
+function findLongestWord(sentence: string) {
+  const words = sentence.split(" ");
 
-  let result = "";
-  for (let i = 0; i < str.length; i++) {
-    if (!isNaN(parseInt(str[i]))) {
-      result += str[i];
+  let longestWord = "";
+
+  for (const word of words) {
+    if (word.length > longestWord.length) {
+      longestWord = word;
     }
   }
-  return result;
-}
 
-console.log(getDigits("m14i1t"));
+  return longestWord;
+}
+console.log(findLongestWord("I come from Uzbekistan"));
