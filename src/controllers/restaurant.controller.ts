@@ -7,10 +7,10 @@ import { MemberType } from "../libs/enums/member.enum";
 const memberService = new MemberService();
 
 const restaurantController: T = {};
-restaurantController.getHome = (req: Request, res: Response) => {
+restaurantController.goHome = (req: Request, res: Response) => {
   try {
     console.log("goHome");
-    res.send("Home Page");
+    res.render("home");
     // send | json | redirect | end | render
   } catch (err) {
     console.log("Error, goHome:", err);
@@ -20,7 +20,7 @@ restaurantController.getHome = (req: Request, res: Response) => {
 restaurantController.getSignup = (req: Request, res: Response) => {
   try {
     console.log("getSignup");
-    res.send("Signup Page");
+    res.render("signup");
   } catch (err) {
     console.log("Error, getSignup:", err);
   }
@@ -29,7 +29,7 @@ restaurantController.getSignup = (req: Request, res: Response) => {
 restaurantController.getLogin = (req: Request, res: Response) => {
   try {
     console.log("getLogin");
-    res.send("Login Page");
+    res.render("login");
   } catch (err) {
     console.log("Error, getLogin:", err);
   }
