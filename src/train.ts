@@ -24,17 +24,21 @@
 
   */
 
-function findLongestWord(sentence: string) {
-  const words = sentence.split(" ");
+/**
+ request join 
+ self destroy
+ */
 
-  let longestWord = "";
-
-  for (const word of words) {
-    if (word.length > longestWord.length) {
-      longestWord = word;
+function countVowels({ string }: { string: any }): number {
+  const vowels = "aeiouAEIOU";
+  let count = 0;
+  for (let char of string) {
+    if (vowels.includes(char)) {
+      count++;
     }
   }
-
-  return longestWord;
+  return count;
 }
-console.log(findLongestWord("I come from Uzbekistan"));
+
+// Misol uchun:
+console.log(countVowels({ string: "string" })); // 1
