@@ -39,6 +39,4 @@ function countVowels({ string }: { string: any }): number {
   }
   return count;
 }
-
-// Misol uchun:
-console.log(countVowels({ string: "string" })); // 1
+console.log(countVowels({ string: "string" }));
