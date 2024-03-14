@@ -11,32 +11,37 @@
 
 */
 
-/**
+/** Request:
  Traditional Api
  Rest Api
  GraphQL Api
  ......
  */
 
-/*
+/*Frontend Deevelopment
   Traditional FD => BSSR (Admin) => EJS
   Modern FD      => SPA => REACT
 
   */
 
-/**
+/**Cookies:
  request join 
  self destroy
  */
 
-function countVowels({ string }: { string: any }): number {
-  const vowels = "aeiouAEIOU";
-  let count = 0;
-  for (let char of string) {
-    if (vowels.includes(char)) {
-      count++;
-    }
-  }
-  return count;
+/** Validation 
+  Frontend validation
+  Backend validation 
+  Database validation
+  
+  */
+
+function reverseSentence(sentence: string) {
+  let words = sentence.split(/\s+/);
+  let reversedWords = words.map((word) => {
+    return word.split("").reverse().join("");
+  });
+
+  return reversedWords.join(" ");
 }
-console.log(countVowels({ string: "string" }));
+console.log(reverseSentence("we like coding!"));
