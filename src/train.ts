@@ -36,12 +36,12 @@
   
   */
 
-function reverseSentence(sentence: string) {
-  let words = sentence.split(/\s+/);
-  let reversedWords = words.map((word) => {
-    return word.split("").reverse().join("");
-  });
-
-  return reversedWords.join(" ");
+function getSquareNumbers(numbers: number[]) {
+  const result = [];
+  for (const num of numbers) {
+    const square = num ** 2;
+    result.push({ number: num, square: square });
+  }
+  return result;
 }
-console.log(reverseSentence("we like coding!"));
+console.log(getSquareNumbers([1, 2, 3]));
