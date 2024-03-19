@@ -36,13 +36,13 @@ productController.createNewProduct = async (
 
     const data: ProductInput = req.body;
     data.productImage = req.files?.map((ele) => {
-      return ele.path.replace(/\\/g, "/"); // windowsda xatolik berishi uchun replace: ni ishkatamiz
+      return ele.path.replace(/\\/g, "/"); // windowsda xatolik berishi uchun replace: ni ishlatamiz
     });
 
     await productService.createNewProduct(data);
     res.send(
       `<script> alert("Sucessful creation"); window.location.replace('admin/product/all') </script>`
-    );
+    ); // Bizni Product list page ga yuboradi
   } catch (err) {
     console.log("Error, createNewProduct:", err);
     const message =

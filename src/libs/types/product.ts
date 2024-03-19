@@ -6,7 +6,7 @@ import {
 } from "../enums/product.enam";
 
 export interface Product {
-  _id: ObjectId;
+  _id: ObjectId; // biz buni Mongoosedan qabul qildik
   productStatus: ProductStatus;
   productCollection: ProductCollection;
   productName: string;
