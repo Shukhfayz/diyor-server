@@ -35,13 +35,17 @@
   Database validation
   
   */
+/*
+N-TASK: 
 
-function getSquareNumbers(numbers: number[]) {
-  const result = [];
-  for (const num of numbers) {
-    const square = num ** 2;
-    result.push({ number: num, square: square });
-  }
-  return result;
+Shunday function yozing, u string qabul qilsin va string palindrom yani togri oqilganda ham, orqasidan oqilganda ham bir hil oqiladigan soz ekanligini aniqlab boolean qiymat qaytarsin.
+MASALAN: palindromCheck("dad") return true;  palindromCheck("son") return false;
+*/
+function palindromCheck({ s }: { s: string }): boolean {
+  const reversed = s.split("").reverse().join("");
+
+  return s === reversed;
 }
-console.log(getSquareNumbers([1, 2, 3]));
+
+console.log(palindromCheck({ s: "dad" })); // true
+console.log(palindromCheck({ s: "son" })); // false
