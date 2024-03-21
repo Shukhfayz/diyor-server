@@ -35,17 +35,17 @@
   Database validation
   
   */
-/*
-N-TASK: 
+// calculateSumOfNumbers.js
 
-Shunday function yozing, u string qabul qilsin va string palindrom yani togri oqilganda ham, orqasidan oqilganda ham bir hil oqiladigan soz ekanligini aniqlab boolean qiymat qaytarsin.
-MASALAN: palindromCheck("dad") return true;  palindromCheck("son") return false;
-*/
-function palindromCheck({ s }: { s: string }): boolean {
-  const reversed = s.split("").reverse().join("");
-
-  return s === reversed;
+function calculateSumOfNumbers(sonlar: any[]): number {
+  const natija = sonlar.reduce((ele: number, current: any) => {
+    if (typeof current === "number" && !isNaN(current)) {
+      return ele + current;
+    } else {
+      return ele;
+    }
+  }, 0);
+  return natija;
 }
 
-console.log(palindromCheck({ s: "dad" })); // true
-console.log(palindromCheck({ s: "son" })); // false
+console.log(calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]));
