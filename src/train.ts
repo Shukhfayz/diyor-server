@@ -37,15 +37,23 @@
   */
 // calculateSumOfNumbers.js
 
-function calculateSumOfNumbers(sonlar: any[]): number {
-  const natija = sonlar.reduce((ele: number, current: any) => {
-    if (typeof current === "number" && !isNaN(current)) {
-      return ele + current;
-    } else {
-      return ele;
-    }
-  }, 0);
-  return natija;
+// P-TASK:
+
+// function objectToArray(obj: { [s: string]: unknown } | ArrayLike<unknown>) {
+//   return Object.entries(obj);
+// }
+
+// console.log(objectToArray({ a: 10, b: 20 })); // javobi: [['a', 10], ['b', 20]]
+
+// Q-TASK:
+
+function hasProperty(
+  obj: { name?: string; model?: string; hasOwnProperty?: any },
+  key: string
+) {
+  return obj.hasOwnProperty(key);
 }
 
-console.log(calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]));
+// Test
+console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); // true
+console.log(hasProperty({ name: "BMW", model: "M3" }, "year")); // false
