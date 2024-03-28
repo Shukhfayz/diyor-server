@@ -37,23 +37,15 @@
   */
 // calculateSumOfNumbers.js
 
-// P-TASK:
+function calculate(expression: string) {
+  // ifodani "+" belgisiga qarab bo'lib bo'lish
+  const parts = expression.split("+");
 
-// function objectToArray(obj: { [s: string]: unknown } | ArrayLike<unknown>) {
-//   return Object.entries(obj);
-// }
+  // Har bir elementni sona aylantiramiz va yig'indisini hisoblaymiz
+  const total = parts.reduce((acc, curr) => acc + parseInt(curr), 0);
 
-// console.log(objectToArray({ a: 10, b: 20 })); // javobi: [['a', 10], ['b', 20]]
-
-// Q-TASK:
-
-function hasProperty(
-  obj: { name?: string; model?: string; hasOwnProperty?: any },
-  key: string
-) {
-  return obj.hasOwnProperty(key);
+  return total;
 }
 
-// Test
-console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); // true
-console.log(hasProperty({ name: "BMW", model: "M3" }, "year")); // false
+// Misol uchun:
+console.log(calculate("1+3")); // 4
