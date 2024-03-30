@@ -37,15 +37,12 @@
   */
 // calculateSumOfNumbers.js
 
-function calculate(expression: string) {
-  // ifodani "+" belgisiga qarab bo'lib bo'lish
-  const parts = expression.split("+");
+// S-TASK:
 
-  // Har bir elementni sona aylantiramiz va yig'indisini hisoblaymiz
-  const total = parts.reduce((acc, curr) => acc + parseInt(curr), 0);
-
-  return total;
+function missingNumber(nums: any[]) {
+  const n = nums.length;
+  const totalSum = (n * (n + 1)) / 2;
+  const actualSum = nums.reduce((acc, curr) => acc + curr, 0);
+  return totalSum - actualSum;
 }
-
-// Misol uchun:
-console.log(calculate("1+3")); // 4
+console.log(missingNumber([3, 0, 1]));
