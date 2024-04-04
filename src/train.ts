@@ -36,33 +36,14 @@
   
   */
 // calculateSumOfNumbers.js
-// T- task
+// U- task
 
-function mergeSortedArrays(arr1: string | any[], arr2: string | any[]) {
-  let mergedArray = [];
-  let i = 0;
-  let j = 0;
-
-  while (i < arr1.length && j < arr2.length) {
-    if (arr1[i] < arr2[j]) {
-      mergedArray.push(arr1[i]);
-      i++;
-    } else {
-      mergedArray.push(arr2[j]);
-      j++;
-    }
+function sumOdds(n: number) {
+  let count = 0;
+  for (let i = 1; i <= n; i += 2) {
+    count++;
   }
-
-  while (i < arr1.length) {
-    mergedArray.push(arr1[i]);
-    i++;
-  }
-
-  while (j < arr2.length) {
-    mergedArray.push(arr2[j]);
-    j++;
-  }
-
-  return mergedArray;
+  return count;
 }
-console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+console.log(sumOdds(9)); // 4
+console.log(sumOdds(11)); // 5
