@@ -38,12 +38,22 @@
 // calculateSumOfNumbers.js
 // U- task
 
-function sumOdds(n: number) {
-  let count = 0;
-  for (let i = 1; i <= n; i += 2) {
-    count++;
+// countChars.js
+
+// V-TASK:
+
+function countChars(str: string) {
+  let charCount: any = {};
+
+  for (let char of str) {
+    if (charCount[char]) {
+      charCount[char]++;
+    } else {
+      charCount[char] = 1;
+    }
   }
-  return count;
+
+  return charCount;
 }
-console.log(sumOdds(9)); // 4
-console.log(sumOdds(11)); // 5
+
+console.log(countChars("hello"));
