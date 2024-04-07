@@ -40,20 +40,34 @@
 
 // countChars.js
 
-// V-TASK:
+// W-TASK:
 
-function countChars(str: string) {
-  let charCount: any = {};
+// function countChars(str: string) {
+//   let charCount: any = {};
 
-  for (let char of str) {
-    if (charCount[char]) {
-      charCount[char]++;
-    } else {
-      charCount[char] = 1;
-    }
-  }
+//   for (let char of str) {
+//     if (charCount[char]) {
+//       charCount[char]++;
+//     } else {
+//       charCount[char] = 1;
+//     }
+//   }
 
-  return charCount;
-}
+//   return charCount;
+// }
 
-console.log(countChars("hello"));
+// console.log(countChars("hello"));
+
+// W-TASK:
+
+// function chunkArray(array:number[], num: number) {
+//   const commonArr=[]
+//   const threeArr[]
+//   for (let i = 0; i < array.length; i++ {
+//     conct element = array[i];
+//     threeArr.push(element)
+//     if (threeArr.length === num) {
+//       commonArr.push(threeArr)
+//     }
+//   })
+// }
