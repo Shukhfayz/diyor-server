@@ -42,24 +42,6 @@
 
 // W-TASK:
 
-// function countChars(str: string) {
-//   let charCount: any = {};
-
-//   for (let char of str) {
-//     if (charCount[char]) {
-//       charCount[char]++;
-//     } else {
-//       charCount[char] = 1;
-//     }
-//   }
-
-//   return charCount;
-// }
-
-// console.log(countChars("hello"));
-
-// W-TASK:
-
 // function chunkArray(array:number[], num: number) {
 //   const commonArr=[]
 //   const threeArr[]
@@ -70,4 +52,17 @@
 //       commonArr.push(threeArr)
 //     }
 //   })
-// }
+
+function chunkArray(arr: string | any[], num: number) {
+  const chunked = [];
+  let index = 0;
+
+  while (index < arr.length) {
+    chunked.push(arr.slice(index, index + num));
+    index += num;
+  }
+  return chunked;
+}
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const num = 3;
+console.log(chunkArray(arr, num));
