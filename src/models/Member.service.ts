@@ -34,7 +34,6 @@ class MemberService {
   }
 
   public async login(input: LoginInput): Promise<Member> {
-    // TODO Consider member status later
     const member = await this.memberModel
       .findOne(
         {
@@ -53,7 +52,6 @@ class MemberService {
       input.memberPassword,
       member.memberPassword
     );
-    //const isMatch = input.memberPassword === member.memeberPassword;
 
     if (!isMatch) {
       throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
@@ -68,6 +66,19 @@ class MemberService {
       .findOne({ _id: memberId, memberStatus: MemberStatus.ACTIVE })
       .exec();
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+    return result;
+  }
+
+  public async updateMember(
+    member: Member,
+    input: MemberUpdateInput
+  ): Promise<Member> {
+    const memberId = shapeIntoMongooseObjectId(member._id);
+    const result = await this.memberModel
+      .findOneAndUpdate({ _id: memberId }, input, { new: true })
+      .exec();
+    if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
 
     return result;
   }
