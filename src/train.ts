@@ -40,29 +40,24 @@
 
 // countChars.js
 
-// W-TASK:
+//  X-TASK: Shunday function yozing, uni object va string parapetrlari bolsin. Function string parametri object ichida necha marotaba takrorlanganligini qaytarsin (nested object bolsa ham sanasin)
+//  MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
+function countOccurrences(obj: any, key: string): number {
+  let count = 0;
 
-// function chunkArray(array:number[], num: number) {
-//   const commonArr=[]
-//   const threeArr[]
-//   for (let i = 0; i < array.length; i++ {
-//     conct element = array[i];
-//     threeArr.push(element)
-//     if (threeArr.length === num) {
-//       commonArr.push(threeArr)
-//     }
-//   })
-
-function chunkArray(arr: string | any[], num: number) {
-  const chunked = [];
-  let index = 0;
-
-  while (index < arr.length) {
-    chunked.push(arr.slice(index, index + num));
-    index += num;
+  if (typeof obj === "object" && obj !== null) {
+    for (const k in obj) {
+      if (k === key) {
+        count += 1;
+      }
+      count += countOccurrences(obj[k], key);
+    }
   }
-  return chunked;
+
+  return count;
 }
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const num = 3;
-console.log(chunkArray(arr, num));
+
+const car = { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } };
+console.log(countOccurrences(car, "model"));
+
+// javob 2
