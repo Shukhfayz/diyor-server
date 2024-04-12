@@ -42,22 +42,17 @@
 
 //  X-TASK: Shunday function yozing, uni object va string parapetrlari bolsin. Function string parametri object ichida necha marotaba takrorlanganligini qaytarsin (nested object bolsa ham sanasin)
 //  MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
-function countOccurrences(obj: any, key: string): number {
-  let count = 0;
 
-  if (typeof obj === "object" && obj !== null) {
-    for (const k in obj) {
-      if (k === key) {
-        count += 1;
-      }
-      count += countOccurrences(obj[k], key);
+function findIntersection(arr1: number[], arr2: number[]): number[] {
+  const intersection: number[] = [];
+  for (const num of arr1) {
+    if (arr2.includes(num) && !intersection.includes(num)) {
+      intersection.push(num);
     }
   }
-
-  return count;
+  return intersection;
 }
-
-const car = { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } };
-console.log(countOccurrences(car, "model"));
-
-// javob 2
+const arr1: number[] = [1, 2, 3];
+const arr2: number[] = [3, 2, 0];
+console.log(findIntersection(arr1, arr2));
+//otvet: [2, 3]
