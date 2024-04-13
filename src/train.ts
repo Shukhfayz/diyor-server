@@ -40,8 +40,7 @@
 
 // countChars.js
 
-//  X-TASK: Shunday function yozing, uni object va string parapetrlari bolsin. Function string parametri object ichida necha marotaba takrorlanganligini qaytarsin (nested object bolsa ham sanasin)
-//  MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
+// Y-TASK:
 
 function findIntersection(arr1: number[], arr2: number[]): number[] {
   const intersection: number[] = [];
