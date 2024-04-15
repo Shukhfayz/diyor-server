@@ -40,18 +40,17 @@
 
 // countChars.js
 
-// Y-TASK:
+// Z-TASK:
 
-function findIntersection(arr1: number[], arr2: number[]): number[] {
-  const intersection: number[] = [];
-  for (const num of arr1) {
-    if (arr2.includes(num) && !intersection.includes(num)) {
-      intersection.push(num);
+function sumEvens(numbers: number[]): number {
+  let sum: number = 0;
+  for (const number of numbers) {
+    if (number % 2 === 0) {
+      sum += number;
     }
   }
-  return intersection;
+  return sum;
 }
-const arr1: number[] = [1, 2, 3];
-const arr2: number[] = [3, 2, 0];
-console.log(findIntersection(arr1, arr2));
-//otvet: [2, 3]
+
+console.log(sumEvens([1, 2, 3]));
+// otvet: 2
