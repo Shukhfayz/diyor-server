@@ -35,23 +35,15 @@
   Database validation
   
   */
-// calculateSumOfNumbers.js
-// U- task
 
-// countChars.js
+// ZA-TASK:
 
-// Y-TASK:
-
-function findIntersection(arr1: number[], arr2: number[]): number[] {
-  const intersection: number[] = [];
-  for (const num of arr1) {
-    if (arr2.includes(num) && !intersection.includes(num)) {
-      intersection.push(num);
-    }
-  }
-  return intersection;
+interface Person {
+  age: number;
 }
-const arr1: number[] = [1, 2, 3];
-const arr2: number[] = [3, 2, 0];
-console.log(findIntersection(arr1, arr2));
-//otvet: [2, 3]
+
+function sortByAge(objects: Person[]): Person[] {
+  objects.sort((a, b) => a.age - b.age);
+  return objects;
+}
+console.log(sortByAge([{ age: 23 }, { age: 21 }, { age: 13 }]));
