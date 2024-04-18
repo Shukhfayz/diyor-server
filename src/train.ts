@@ -36,8 +36,7 @@
   
   */
 
-// ZA-TASK:
-
+// Task: ZA
 interface Person {
   age: number;
 }
@@ -46,4 +45,5 @@ function sortByAge(objects: Person[]): Person[] {
   objects.sort((a, b) => a.age - b.age);
   return objects;
 }
+
 console.log(sortByAge([{ age: 23 }, { age: 21 }, { age: 13 }]));
