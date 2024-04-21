@@ -51,6 +51,4 @@
 function randomBetween(minNum: number, maxNum: number) {
   return Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
 }
-
-// Test uchun
-console.log(randomBetween(30, 50)); // Masalan: 45
+console.log(randomBetween(30, 50));
