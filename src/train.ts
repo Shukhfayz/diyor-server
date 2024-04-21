@@ -36,14 +36,21 @@
   
   */
 
-// Task: ZA
-interface Person {
-  age: number;
+// Task: ZC
+// function celsiusToFahrenheit(celsius: number): number {
+//   const fahrenheit: number = (celsius * 9) / 5 + 32;
+//   return fahrenheit;
+// }
+
+// console.log(celsiusToFahrenheit(0));
+
+// Task: ZB
+// Shunday function yozing, uni 2 ta number parametri bolsin va berilgan sonlar orasidan random raqam return qilsin
+// MASALAN: randomBetween(30, 50) return 45
+
+function randomBetween(minNum: number, maxNum: number) {
+  return Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
 }
 
-function sortByAge(objects: Person[]): Person[] {
-  objects.sort((a, b) => a.age - b.age);
-  return objects;
-}
-
-console.log(sortByAge([{ age: 23 }, { age: 21 }, { age: 13 }]));
+// Test uchun
+console.log(randomBetween(30, 50)); // Masalan: 45
