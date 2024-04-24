@@ -44,11 +44,13 @@
 
 // console.log(celsiusToFahrenheit(0));
 
-// Task: ZB
-// Shunday function yozing, uni 2 ta number parametri bolsin va berilgan sonlar orasidan random raqam return qilsin
-// MASALAN: randomBetween(30, 50) return 45
-
-function randomBetween(minNum: number, maxNum: number) {
-  return Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+// Task: ZD
+function changeNumberInArray(
+  index: number,
+  arr: number[],
+  number: number
+): number[] {
+  arr[index] = number;
+  return arr;
 }
-console.log(randomBetween(30, 50));
+console.log(changeNumberInArray(1, [1, 3, 7, 2], 2)); // otvet [1, 2, 7, 2]
