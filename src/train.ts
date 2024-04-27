@@ -44,13 +44,14 @@
 
 // console.log(celsiusToFahrenheit(0));
 
-// Task: ZD
-function changeNumberInArray(
-  index: number,
-  arr: number[],
-  number: number
-): number[] {
-  arr[index] = number;
-  return arr;
+// Task: ZE
+function removeDuplicate(inputString: string): string {
+  let result: string = "";
+  for (let i = 0; i < inputString.length; i++) {
+    if (inputString.indexOf(inputString[i]) === i) {
+      result += inputString[i];
+    }
+  }
+  return result;
 }
-console.log(changeNumberInArray(1, [1, 3, 7, 2], 2)); // otvet [1, 2, 7, 2]
+console.log(removeDuplicate("stringg"));
