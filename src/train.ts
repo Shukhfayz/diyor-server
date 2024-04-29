@@ -36,22 +36,28 @@
   
   */
 
-// Task: ZC
-// function celsiusToFahrenheit(celsius: number): number {
-//   const fahrenheit: number = (celsius * 9) / 5 + 32;
-//   return fahrenheit;
-// }
+// Task: ZF
+function capitalizeWords(str: string): string {
+  if (!str) {
+    return "";
+  }
+  const words: string[] = str.split(" ");
 
-// console.log(celsiusToFahrenheit(0));
+  let newStr: string = "";
 
-// Task: ZE
-function removeDuplicate(inputString: string): string {
-  let result: string = "";
-  for (let i = 0; i < inputString.length; i++) {
-    if (inputString.indexOf(inputString[i]) === i) {
-      result += inputString[i];
+  for (let i = 0; i < words.length; i++) {
+    const word: string = words[i];
+
+    if (word.length <= 2) {
+      newStr += word;
+    } else {
+      newStr += word[0].toUpperCase() + word.slice(1);
+    }
+    if (i !== words.length - 1) {
+      newStr += " ";
     }
   }
-  return result;
+
+  return newStr;
 }
-console.log(removeDuplicate("stringg"));
+console.log(capitalizeWords("name should be a string"));
