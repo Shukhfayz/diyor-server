@@ -1,6 +1,6 @@
-import { Member } from "../libs/types/member";
-import OrderModel from "../schema/Order.model";
 import OrderItemModel from "../schema/OrderItem.model";
+import OrderModel from "../schema/Order.model";
+import { Member } from "../libs/types/member";
 import {
   Order,
   OrderInquiry,
@@ -78,7 +78,7 @@ class OrderService {
     const result = await this.orderModel
       .aggregate([
         { $match: matches },
-        { $sort: { updateAt: -1 } },
+        { $sort: { updatedAt: -1 } },
         { $skip: (inquiry.page - 1) * inquiry.limit },
         { $limit: inquiry.limit },
         {
