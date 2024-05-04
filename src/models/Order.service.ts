@@ -29,6 +29,7 @@ class OrderService {
     member: Member,
     input: OrderItemInput[]
   ): Promise<Order> {
+    console.log("input:", input);
     const memberId = shapeIntoMongooseObjectId(member._id);
     const amount = input.reduce((accumulator: number, item: OrderItemInput) => {
       return accumulator + item.itemPrice * item.itemQuantity;
@@ -46,6 +47,7 @@ class OrderService {
       console.log("orderId:", orderId);
       await this.recordOrderItem(orderId, input);
 
+      console.log("newOrder:", newOrder);
       return newOrder;
     } catch (err) {
       console.log("Error, model:createOrder:", err);
@@ -99,6 +101,7 @@ class OrderService {
         },
       ])
       .exec();
+    console.log("result:", result);
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
     return result;
   }

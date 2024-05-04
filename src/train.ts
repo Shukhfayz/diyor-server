@@ -36,28 +36,23 @@
   
   */
 
-// Task: ZF
-function capitalizeWords(str: string): string {
-  if (!str) {
-    return "";
-  }
-  const words: string[] = str.split(" ");
+// Task: ZH
+function findDisappearedNumbers(nums: number[]): number[] {
+  const n: number = nums.length;
+  const disappeared: number[] = [];
 
-  let newStr: string = "";
-
-  for (let i = 0; i < words.length; i++) {
-    const word: string = words[i];
-
-    if (word.length <= 2) {
-      newStr += word;
-    } else {
-      newStr += word[0].toUpperCase() + word.slice(1);
+  for (const num of nums) {
+    if (nums[Math.abs(num) - 1] > 0) {
+      nums[Math.abs(num) - 1] *= -1;
     }
-    if (i !== words.length - 1) {
-      newStr += " ";
+  }
+  for (let i = 0; i < n; i++) {
+    if (nums[i] > 0) {
+      disappeared.push(i + 1);
     }
   }
 
-  return newStr;
+  return disappeared;
 }
-console.log(capitalizeWords("name should be a string"));
+
+console.log(findDisappearedNumbers([1, 3, 4, 7]));
