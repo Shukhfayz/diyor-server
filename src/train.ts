@@ -36,23 +36,16 @@
   
   */
 
-// Task: ZH
-function findDisappearedNumbers(nums: number[]): number[] {
-  const n: number = nums.length;
-  const disappeared: number[] = [];
-
-  for (const num of nums) {
-    if (nums[Math.abs(num) - 1] > 0) {
-      nums[Math.abs(num) - 1] *= -1;
-    }
-  }
-  for (let i = 0; i < n; i++) {
-    if (nums[i] > 0) {
-      disappeared.push(i + 1);
-    }
-  }
-
-  return disappeared;
+// Task: ZI
+function delayHelloWorld(text: string): Promise<string> {
+  return new Promise<string>((resolve) => {
+      setTimeout(() => {
+          resolve(text);
+      }, 3000); 
+  });
 }
 
-console.log(findDisappearedNumbers([1, 3, 4, 7]));
+delayHelloWorld("Hello World").then((result) => {
+  console.log(result); 
+});
+
